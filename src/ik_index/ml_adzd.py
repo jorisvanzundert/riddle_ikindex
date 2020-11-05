@@ -15,7 +15,8 @@ PATH_TO_DIALOGUE = os.path.join( PATH_TO_DATA, "Alleen dialoog (20)" )
 PATH_TO_NON_DIALOGUE = os.path.join( PATH_TO_DATA, "Zonder dialoog (20)" )
 
 def clean( text ):
-    return regex.sub( r'\d+|[\'"“”‘’\-–—.,!?]', '', text ).lower()
+    text = regex.sub( r'\d+|[\'"“”‘’\-–—.,!?]', ' ', text ).lower()
+    return regex.sub( r'\s+', ' ', text )
 
 def shortname( file_path ):
     return os.path.basename( file_path ).split( '.' )[0]

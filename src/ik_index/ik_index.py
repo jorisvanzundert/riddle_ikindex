@@ -23,8 +23,8 @@ def ik_index( path_to_texts, index_meta ):
             for word_form in index_meta[ 'denominator' ]:
                 denominator += len( re.findall( r'\b{}\b'.format( word_form ), text ) )
             meta_info = parse_name( file_name )
-            results[ meta_info[ 'author_title_shortened' ] ] = [ meta_info[ 'perspective' ], ( enumerator / ( 1 + denominator ) ) ]
-    data_frame = pandas.DataFrame.from_dict( results, orient="index", columns=[ 'perspective', 'ik-index' ] )
+            results[ meta_info[ 'author_title_shortened' ] ] = [ meta_info[ 'perspective' ], ( enumerator / ( 1 + denominator ) ), n ]
+    data_frame = pandas.DataFrame.from_dict( results, orient="index", columns=[ 'perspective', 'ik-index', 'token_count' ] )
     data_frame = data_frame.sort_values( by=[ 'ik-index' ], ascending=False )
     enumerator_latex_index = ''
     for word_form in index_meta[ 'enumerator' ]:

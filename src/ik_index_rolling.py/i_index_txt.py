@@ -1,4 +1,8 @@
 import regex
+import matplotlib.pyplot as pyplot
+import seaborn
+
+seaborn.set()
 
 index_meta = {
     'enumerator': [ 'ik', 'wij', 'we', 'me', 'mij[n]', 'ons', 'onze' ],
@@ -6,10 +10,14 @@ index_meta = {
 }
 
 def label_line( line ):
-    if line.startswith( '{S}' ):
+    if line.startswith( '{s}' ):
         return ( 'S', line[3:] )
     else:
         return ( 'N', line )
+
+def clean_line( line ):
+    line = regex.sub( r'\d+|[\'"“”‘’\-–—.,!?]', ' ', line ).lower()
+    return regex.sub( r'\s+', ' ', line )
 
 def i_index_line( label, line ):
     enumerator = 0
@@ -23,20 +31,29 @@ def i_index_line( label, line ):
 file_name = 'data/undisclosed/txts/Abdolah_Koning.txt'
 with open( file_name, "r" ) as txt_file:
     text = txt_file.read().lower()
-    lines = text.split( '\n' )
-    # isolate anything between single quotes as direct speech
-    labeled_lines = []
-    for line in lines[100:200]:
-        labeled_lines += regex.sub( r'\'(.*?)\'', '\'{S}\\1\'', line ).split( '\'' )
-    # The split on lines that start with an ' causes blank lines, we'll remove them.
-    labeled_lines = list( filter( lambda line: len( line ) > 0, labeled_lines ) )
-    # We're not interested in punctuation for now, and we clean up leading and trailing space.
-    labeled_lines = list( map( lambda line: regex.sub( r'[.,?!;:\'"“”‘’]', '', line ).strip(), labeled_lines ) )
-    # Lastly map all lines to a list of tuples [ ( label, line ) ]
-    labeled_lines = list( map( label_line, labeled_lines ) )
 
-    # let's compute i index for each line
-    labeled_lines = [ i_index_line( *tuple ) for tuple in labeled_lines ]
+lines = text.split( '\n' )
+# isolate anything between single quotes as direct speech
+labeled_lines = []
+for line in lines[100:200]:
+    labeled_lines += regex.sub( r'\'(.*?)\'', '\'{S}\\1\'', line ).split( '\'' )
+# The split on lines that start with an ' causes blank lines, we'll remove them.
+labeled_lines = list( filter( lambda line: len( line ) > 0, labeled_lines ) )
+# We're not interested in punctuation for now, and we clean up leading and trailing space.
+labeled_lines = list( map( clean_line, labeled_lines ) )
+# Lastly map all lines to a list of tuples [ ( label, line ) ]
+labeled_lines = list( map( label_line, labeled_lines ) )
 
-    for line in labeled_lines:
-        print( line )
+# let's compute i index for each line
+labeled_lines = [ i_index_line( *tuple ) for tuple in labeled_lines ]
+# for line in labeled_lines:
+#     print( line )
+
+i, s = list( zip( *labeled_lines ) )[0:2]
+s = list( map( lambda x: 0.2 if x=='S' else -0.2, s ) )
+x = range( 0, len(i) )
+fig = pyplot.figure( figsize=(10,3))
+ax = pyplot.subplot(111)
+ax.bar( x, i, width=0.8, color='g', alpha=0.9 )
+ax.bar( x, s, width=0.8, color='r', alpha=0.5 )
+pyplot.show()

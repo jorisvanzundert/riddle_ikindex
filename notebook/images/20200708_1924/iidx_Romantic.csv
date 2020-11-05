@@ -1,0 +1,8 @@
+"","txt_name","token_count_full_text","ik_index_full_text","token_count_dialogue","ik_index_dialogue","token_count_nondialogue","ik_index_nondialogue","ratio_dialogue","genre","mean_literary_rating","language_category"
+"39","Middelbeek_Turbulentie",9692,0.51,3542,0.48,6107,0.52,0.37,"Romantic",2.83,1
+"18","Gastel_ZwaarVerliefd! 43",9783,0.6,3532,0.46,6244,0.66,0.36,"Romantic",2.7,1
+"27","James_KleineDingen 7",9828,0.12,1898,0.44,7962,0,0.19,"Romantic",3.54,3
+"42","Neill_VriendschapLiefdeEn 65",9777,0.17,2524,0.48,7197,0,0.26,"Romantic",3.45,3
+"40","Montefiore_Affaire 35",9644,0.29,5058,0.5,4579,0,0.52,"Romantic",3.21,3
+"16","Fallon_OpManAf 29",9762,0.13,2146,0.43,7577,0,0.22,"Romantic",2.91,3
+"31","Kinsella_WatSpookJij 57",9633,0.52,3611,0.46,5889,0.56,0.37,"Romantic",2.63,3

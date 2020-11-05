@@ -1,0 +1,25 @@
+"","txt_name","token_count_full_text","ik_index_full_text","token_count_dialogue","ik_index_dialogue","token_count_nondialogue","ik_index_nondialogue","ratio_dialogue","genre","mean_literary_rating","language_category"
+"41","Mortier_GestameldLiedboek 5",9792,0.41,675,0.38,9112,0.41,0.07,"Fiction",6.54,1
+"9","Bernlef_GeleendeLevens 31",9877,0.27,1608,0.42,8260,0.22,0.16,"Fiction",6.25,1
+"59","Wieringa_Caesarion 57",9879,0.46,2440,0.47,7427,0.45,0.25,"Fiction",6.2,1
+"6","Bakker_Omweg 40",9724,0.15,2458,0.51,7246,0,0.25,"Fiction",6.19,1
+"2","Abdolah_Kraai 17",9636,0.61,1290,0.39,8344,0.64,0.13,"Fiction",5.91,1
+"8","Beijnum_SoortFamilie 96",9904,0.08,1106,0.47,8792,0,0.11,"Fiction",5.76,1
+"60","Winter_RechtOpTerugkeer 128",9740,0.25,3300,0.46,6438,0,0.34,"Fiction",5.75,1
+"1","Abdolah_Koning 2",9753,0.27,4018,0.49,5730,0,0.41,"Fiction",5.23,1
+"32","Koch_ZomerhuisMetZwembad 56",9838,0.56,3169,0.51,6663,0.58,0.32,"Fiction",5.09,1
+"56","Verhoef_Tegenlicht 32",9697,0.5,2614,0.45,7076,0.52,0.27,"Fiction",4.2,1
+"10","Bezaz_Vinexvrouwen 23",9668,0.55,3519,0.45,6146,0.61,0.36,"Fiction",3.54,1
+"50","Royen_Mannentester 7",9754,0.47,2251,0.46,7507,0.47,0.23,"Fiction",3.18,1
+"25","Houellebecq_KaartEnGebied",9952,0.24,3770,0.52,6170,0.01,0.38,"Fiction",6.41,2
+"36","Lewinsky_LotVanFamilie 306",9770,0.2,1495,0.36,8264,0.15,0.15,"Fiction",5.72,2
+"51","RuizZafon_SpelVanEngel 155",9681,0.68,2764,0.65,6917,0.68,0.29,"Fiction",5.66,2
+"4","Ammaniti_JijEnIk 16",9587,0.5,2697,0.47,6885,0.51,0.28,"Fiction",5.61,2
+"28","Jonasson_100-jarigeManDie 6",9823,0.05,576,0.44,9245,0,0.06,"Fiction",4.81,2
+"20","Harbach_KunstVanVeldspel 147",9786,0.14,1978,0.48,7801,0,0.2,"Fiction",5.88,3
+"54","Stockett_Keukenmeidenroman 87",9779,0.57,2399,0.58,7374,0.56,0.25,"Fiction",4.95,3
+"38","Mastras_TranenOverKashmir 12",9846,0.13,2045,0.44,7796,0,0.21,"Fiction",4.79,3
+"49","Rosnay_DieLaatsteZomer 9",9713,0.26,2540,0.47,7167,0.17,0.26,"Fiction",4.59,3
+"11","Brown_AllesWatWij 82",9872,0.14,2481,0.51,7380,0,0.25,"Fiction",4.23,3
+"15","Evans_Vergeving 86",9784,0.12,1605,0.41,8176,0,0.16,"Fiction",4.16,3
+"30","Kingsbury_NooitTeLaat 74",9840,0.12,2106,0.46,7729,0,0.21,"Fiction",3.47,3

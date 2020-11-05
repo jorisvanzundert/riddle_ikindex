@@ -14,7 +14,8 @@ PATH_TO_DATA = 'AD_ZD'
 PATH_TO_1001 = os.path.join( PATH_TO_DATA, "1001" )
 
 def clean( text ):
-    return regex.sub( r'\d+|[\'"“”‘’\-–—.,!?]', '', text ).lower()
+    text = regex.sub( r'\d+|[\'"“”‘’\-–—.,!?]', ' ', text ).lower()
+    return regex.sub( r'\s+', ' ', text )
 
 def shortname( file_path ):
     return os.path.basename( file_path ).split( '.' )[0]

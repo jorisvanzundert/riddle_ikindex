@@ -137,3 +137,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Do not include stale notebooks
+notebook/i-index_20*
