@@ -46,4 +46,4 @@ index_meta = {
     'denominator': [ 'ik', 'wij', 'we', 'me', 'mij[n]', 'ons', 'onze', 'hij', 'zij', 'ze', 'je', 'jou[w]', 'haar', 'zijn', 'jullie' ]
 }
 ik_index_result_package = infer_ik_index( index_meta, measurement_title='I-index', save_as_file=False )
-plot_ik_index( ik_index_result_package, save_output=True )
+plot_ik_index( ik_index_result_package, save_output=False )
