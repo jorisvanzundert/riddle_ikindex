@@ -18,9 +18,9 @@ def write_pickle( ik_index_result_package, save=False ):
              pickle.dump( ik_index_result_package, pickle_file )
     return ik_index_result_package
 
-def infer_ik_index( index_meta, save_as_file=False ):
+def infer_ik_index( index_meta, measurement_title='ik-index', save_as_file=False ):
     data_frame, equation_latex = ik_index( config.PATH_TO_TEXTS, index_meta )
-    ik_index_result_package = { 'data_frame': data_frame, 'equation': equation_latex }
+    ik_index_result_package = { 'data_frame': data_frame, 'equation': equation_latex, 'measurement_title': measurement_title }
     ik_index_result_package = write_pickle( ik_index_result_package, save=save_as_file )
     return ik_index_result_package
 
@@ -45,5 +45,5 @@ index_meta = {
     'enumerator': [ 'ik', 'wij', 'we', 'me', 'mij[n]', 'ons', 'onze' ],
     'denominator': [ 'ik', 'wij', 'we', 'me', 'mij[n]', 'ons', 'onze', 'hij', 'zij', 'ze', 'je', 'jou[w]', 'haar', 'zijn', 'jullie' ]
 }
-ik_index_result_package = infer_ik_index( index_meta, save_as_file=False )
-plot_ik_index( ik_index_result_package, save_output=False )
+ik_index_result_package = infer_ik_index( index_meta, measurement_title='I-index', save_as_file=False )
+plot_ik_index( ik_index_result_package, save_output=True )
