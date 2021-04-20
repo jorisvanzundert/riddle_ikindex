@@ -5,7 +5,7 @@ import pickle
 import os
 from ik_index_plot import plot_ik_index
 
-file_path = 'results/ik-ml-1001_20200220_1613.txt'
+file_path = 'results/ik-ml-1001_20210421_0029.txt'
 
 with open( file_path ) as result_file:
     lines = result_file.readlines()[1:]
@@ -25,4 +25,4 @@ file_path = '{}.pickle'.format( os.path.splitext( file_path )[0] )
 meta_package[ 'file_path' ] = file_path
 with open( file_path, 'wb' ) as pickle_file:
      pickle.dump( meta_package, pickle_file )
-plot_ik_index( file_path, True )
+plot_ik_index( meta_package, True )

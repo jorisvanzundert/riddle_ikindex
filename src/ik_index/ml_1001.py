@@ -10,7 +10,7 @@ import pandas
 from sklearn.feature_extraction.text import TfidfVectorizer
 import ml_model
 
-PATH_TO_DATA = 'AD_ZD'
+PATH_TO_DATA = 'data/undisclosed/AD_ZD'
 PATH_TO_1001 = os.path.join( PATH_TO_DATA, "1001" )
 
 def clean( text ):
@@ -31,6 +31,7 @@ all_file_paths = first_person_file_paths + third_person_file_paths
 all_labels = [1] * len( first_person_file_paths ) + [0] * len( third_person_file_paths )
 
 results = pandas.DataFrame( columns=[ 'label', 'predicted' ] )
+print( all_labels )
 for idx, file_path in enumerate( all_file_paths ):
     training_texts = []
     for path in ( path for path in all_file_paths if( path != file_path ) ):
@@ -49,5 +50,5 @@ for idx, file_path in enumerate( all_file_paths ):
         results.loc[ shortname( file_path ) ] = [ test_label, prediction[0] ]
     # TODO: put to decent dataframe and pickle
     # Last time for plotting parsed the tmp file into a dataframe
-    with open( 'results/ik-ml-1001_20200128_1304.txt', 'w' ) as result_file:
+    with open( 'results/ik-ml-1001_20210421_0029.txt', 'w' ) as result_file:
         result_file.write( results.to_string() )
